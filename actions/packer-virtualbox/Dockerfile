@@ -9,6 +9,8 @@ LABEL "repository"="http://github.com/jrbeverly/packer-on-github"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="jrbeverly <jonathan@jrbeverly.me>"
 
+RUN apt-get update
+RUN apt install -y software-properties-common
 RUN wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
 RUN wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -
 RUN apt-get update
