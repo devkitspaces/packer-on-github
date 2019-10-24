@@ -1,0 +1,17 @@
+name: Packer
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: docker - packer validate
+        uses: docker://hashicorp/packer:1.4.3
+        with:
+          args: validate docker.json
+      - name: docker - packer build
+        uses: docker://hashicorp/packer:1.4.3
+        with:
+          args: build docker.json

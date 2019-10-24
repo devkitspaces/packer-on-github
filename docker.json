@@ -1,0 +1,27 @@
+{
+    "description": "Testing docker build with GitHub Actions",
+    "builders": [
+        {
+            "type": "docker",
+            "image": "ubuntu:18.04",
+            "commit": "true"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "shell",
+            "inline": [
+                "echo 'GitHub Actions' > /opt/message"
+            ]
+        }
+    ],
+    "post-processors": [
+        [
+            {
+                "type": "docker-tag",
+                "repository": "jrbeverly/packer-github-actions",
+                "tag": "latest"
+            }
+        ]
+    ]
+}
