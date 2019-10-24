@@ -10,3 +10,5 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="jrbeverly <jonathan@jrbeverly.me>"
 
 RUN apk add --no-cache jq curl
+RUN apk add --update docker openrc
+RUN rc-update add docker boot
