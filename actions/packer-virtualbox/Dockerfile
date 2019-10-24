@@ -9,11 +9,9 @@ LABEL "repository"="http://github.com/jrbeverly/packer-on-github"
 LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="jrbeverly <jonathan@jrbeverly.me>"
 
-RUN echo "deb http://download.virtualbox.org/virtualbox/debian trusty contrib" >> /etc/apt/sources.list && \
-    wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add - && \
-    wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add - && \
-    apt-get update && \
-    apt-get install -y --no-install-recommends virtualbox-5.0
-
-RUN apt-get update && \
-    apt-get install -y make gcc git
+RUN wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | apt-key add -
+RUN wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | apt-key add -
+RUN apt-get update
+RUN apt-get install -y --no-install-recommends virtualbox-5.0
+RUN apt-get update 
+RUN apt-get install -y make gcc git
