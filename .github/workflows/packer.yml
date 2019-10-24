@@ -12,6 +12,6 @@ jobs:
         with:
           args: validate packer.json
       - name: packer build
-        uses: docker://hashicorp/packer:1.4.3
+        uses: ./actions/packer-virtualbox
         with:
           args: build packer.json
