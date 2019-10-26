@@ -5,6 +5,7 @@ on:
     - master
     paths:
     - .github/workflows/docker.yml
+    - actions/packer-docker/Dockerfile
     - docker.json
 
 jobs:

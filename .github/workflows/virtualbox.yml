@@ -5,6 +5,7 @@ on:
     - master
     paths:
     - .github/workflows/virtualbox.yml
+    - actions/packer-virtualbox/Dockerfile
     - virtualbox.json
 
 jobs:
