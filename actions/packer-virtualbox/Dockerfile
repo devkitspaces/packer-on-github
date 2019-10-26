@@ -11,9 +11,10 @@ LABEL "homepage"="http://github.com/actions"
 LABEL "maintainer"="jrbeverly <jonathan@jrbeverly.me>"
 
 RUN apt-get update
-RUN apt-get install -y git bash openssl
-RUN go get github.com/mitchellh/gox
-RUN go get github.com/hashicorp/packer
+RUN apt-get install -y git bash openssl curl zip
+RUN curl -SL https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip -o packer_1.4.2_linux_amd64.zip
+RUN unzip packer_1.4.2_linux_amd64.zip
+RUN mv packer /usr/bin/packer
 
 WORKDIR $GOPATH/src/github.com/hashicorp/packer
 
