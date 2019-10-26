@@ -1,0 +1,19 @@
+name: HyperV
+on:
+  push:
+    branches:
+    - master
+    paths:
+    - .github/workflows/hyperv.yml
+    - actions/packer-hyperv/Dockerfile
+    - hyperv.json
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: hyperv - packer build
+        run: |
+          choco install -y packer
+          packer build hyperv.json

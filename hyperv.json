@@ -1,0 +1,45 @@
+{
+  "builders": [
+    {
+      "type": "hyperv-iso",
+      "vm_name": "{{ user `vm_name` }}",
+      "iso_url": "{{ user `iso_url` }}",
+      "iso_checksum_type": "{{user `iso_checksum_type`}}",
+      "iso_checksum": "{{user `iso_checksum`}}",
+      "temp_path": ".",
+      "disk_size": "{{ user `disk_size`}}",
+      "communicator": "winrm",
+      "winrm_username": "Administrator",
+      "winrm_password": "password",
+      "winrm_timeout": "8h",
+      "shutdown_timeout": "30m",
+      "memory": 4096,
+      "enable_dynamic_memory": "true",
+      "cpus": 4,
+      "generation": 2,
+      "switch_name": "{{user `switch_name`}}",
+      "vlan_id": "{{user `vlan_id`}}",
+      "boot_wait": "0s",
+      "boot_command": ["a<enter><wait>a<enter><wait>a<enter><wait>a<enter>"],
+      "output_directory": "{{ user `output_directory`}}",
+      "guest_additions_mode": "disable",
+      "enable_secure_boot": false
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "powershell",
+      "inline": ["Write-Output Phase-5-Deprovisioning"]
+    }
+  ],
+  "variables": {
+    "iso_url": "https://software-download.microsoft.com/download/pr/17134.1.180410-1804.rs4_release_CLIENTENTERPRISEEVAL_OEMRET_x64FRE_en-us.iso",
+    "iso_checksum_type": "sha256",
+    "iso_checksum": "27e4feb9102f7f2b21ebdb364587902a70842fb550204019d1a14b120918e455",
+    "switch_name": "",
+    "vlan_id": "",
+    "vm_name": "packer-windows2019-g2",
+    "disk_size": "80000",
+    "output_directory": "output-windows-2019-g2"
+  }
+}
