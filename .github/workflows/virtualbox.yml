@@ -21,7 +21,10 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y git bash openssl curl zip 
-
+          sudo add-apt-repository multiverse 
+          sudo apt-get update
+          sudo apt install -y virtualbox linux-headers-generic
+          sudo dpkg-reconfigure virtualbox-dkms
           curl -SL https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip -o packer_1.4.2_linux_amd64.zip
           unzip packer_1.4.2_linux_amd64.zip
           ./packer build virtualbox.json
