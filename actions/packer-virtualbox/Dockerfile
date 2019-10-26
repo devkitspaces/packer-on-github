@@ -1,4 +1,4 @@
-FROM golang:alpine
+FROM partlab/ubuntu-golang:latest
 ENV PACKER_DEV=1
 
 LABEL "com.github.actions.name"="Packer"
