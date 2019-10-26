@@ -21,4 +21,4 @@ RUN apt-get update
 RUN apt install -y virtualbox
 
 WORKDIR $GOPATH
-ENTRYPOINT ["bin/packer"]
+ENTRYPOINT ["/usr/bin/packer"]
