@@ -1,0 +1,17 @@
+name: Packer
+on:
+  push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: virtualbox - packer validate
+        uses: docker://hashicorp/packer:1.4.3
+        with:
+          args: validate virtualbox.json
+      - name: virtualbox - packer build
+        uses: ./actions/packer-vagrant
+        with:
+          args: build virtualbox.json
