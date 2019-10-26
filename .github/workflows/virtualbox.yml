@@ -12,6 +12,6 @@ jobs:
         with:
           args: validate virtualbox.json
       - name: virtualbox - packer build
-        uses: ./actions/packer-vagrant
+        uses: ./actions/packer-virtualbox
         with:
           args: build virtualbox.json
