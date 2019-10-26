@@ -1,6 +1,11 @@
 name: Virtualbox
 on:
-  push
+  push:
+    branches:
+    - master
+    paths:
+    - .github/workflows/virtualbox.yml
+    - virtualbox.json
 
 jobs:
   build:

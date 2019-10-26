@@ -1,6 +1,11 @@
 name: Docker
 on:
-  push
+  push:
+    branches:
+    - master
+    paths:
+    - .github/workflows/docker.yml
+    - docker.json
 
 jobs:
   build:
