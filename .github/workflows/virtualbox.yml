@@ -19,8 +19,8 @@ jobs:
           args: validate virtualbox.json
       - name: virtualbox - packer build
         run: |
-          apt-get update
-          apt-get install -y git bash openssl curl zip 
+          sudo apt-get update
+          sudo apt-get install -y git bash openssl curl zip 
 
           curl -SL https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd64.zip -o packer_1.4.2_linux_amd64.zip
           unzip packer_1.4.2_linux_amd64.zip
