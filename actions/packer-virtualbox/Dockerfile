@@ -16,10 +16,6 @@ RUN curl -SL https://releases.hashicorp.com/packer/1.4.2/packer_1.4.2_linux_amd6
 RUN unzip packer_1.4.2_linux_amd64.zip
 RUN mv packer /usr/bin/packer
 
-WORKDIR $GOPATH/src/github.com/hashicorp/packer
-
-RUN /bin/bash scripts/build.sh
-
 RUN add-apt-repository multiverse 
 RUN apt-get update
 RUN apt install -y virtualbox
