@@ -16,4 +16,5 @@ jobs:
       - name: hyperv - packer build
         run: |
           choco install -y packer
+          Enable-WindowsOptionalFeature -Online -FeatureName  Microsoft-Hyper-V-Tools-All
           packer build hyperv.json
