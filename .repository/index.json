@@ -1,0 +1,20 @@
+{
+  "slug": "packer-on-github",
+  "namespace": "jrbeverly",
+  "status": "archived",
+  "icon": "icon.svg",
+  "license": {
+    "type": "MIT",
+    "content": "Jonathan Beverly <jrbeverly>"
+  },
+  "topics": [
+    "packer",
+    "github-actions",
+    "cicd",
+    "virtualbox",
+    "docker"
+  ],
+  "languages": [
+    "Dockerfile"
+  ]
+}
