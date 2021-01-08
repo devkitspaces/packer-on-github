@@ -1,0 +1,11 @@
+{
+  "name": "Starter",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "args": {}
+  },
+  "settings": {
+    "terminal.integrated.shell.linux": "/bin/bash"
+  },
+  "extensions": []
+}
