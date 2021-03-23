@@ -1,0 +1,18 @@
+slug: packer-on-github
+description: Experimenting with GitHub Actions for building machine images with Packer
+project: devkitspaces
+namespace:
+status: archived
+icon: icon.svg
+license:
+  type: MIT
+  content: Jonathan Beverly <jrbeverly>
+  year: 2019
+topics: |-
+  [
+    "packer",
+    "github-actions",
+    "cicd",
+    "virtualbox",
+    "docker"
+  ]
